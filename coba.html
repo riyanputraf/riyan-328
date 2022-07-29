@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+       
+                    function hitungLuas(){
+        
+                        orang = document.getElementById("txtOrang").value;
+        
+                        penjualan = document.getElementById("txtPenjualan").value;
+        
+                        if(orang < 10){
+                            komisi = 0.05 * penjualan;
+                        }else if(orang > 9  || orang < 51){
+                            if(penjualan < 1000000){
+                                komisi = 0.1 * penjualan;
+                            }else if(penjualan >= 1000000){
+                                komisi = 0.125 * penjualan;
+                            }
+                           
+                        }else if(orang > 51){
+                            komisi = 0.15 * penjualan;
+                        }
+                        document.getElementById("txtOrangValue").innerHTML =  orang;
+                        document.getElementById("txtPenjualanValue").innerHTML =  penjualan;
+                        document.getElementById("txtKomisi").innerHTML =  komisi;
+
+                        document.getElementById("txtValueAkhir").innerHTML =  orang;
+
+                    }
+        
+                </script>
+        
+
+</head>
+<body>
+    Aplikasi Perhitungan MLM<br/>
+
+        Jumlah Orang : <input type="text" id="txtOrang" name="txtOrang">
+
+        Jumlah Penjualan : <input type="text" id="txtPenjualan" name="txtLebar"><br/>
+
+        <input type="button" id="btnHitung" value="Submit" onclick="hitungLuas();"><br/> <br>
+
+        Jumlah Orang : <span id="txtOrangValue"> </span><br>
+
+        <!-- <input type="text" id="txtOrangValue" name="txtOrang"> <br> -->
+        
+        Jumlah Penjualan : <span id="txtPenjualanValue"> </span><br>
+
+        <!-- <input type="text" id="txtPenjualanValue" name="txtPenjualan"> <br> -->
+
+        Hasil Komisi : <span id="txtKomisi"> </span><br>
+
+        <!-- <input type="text" id="txtKomisi" name="txtKomisi"> <br> -->
+
+
+</body>
+</html>
